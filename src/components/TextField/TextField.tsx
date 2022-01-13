@@ -13,7 +13,7 @@ interface Props {
 }
 
 const useStyles = makeStyles((theme: Theme) => ({
-  RootContainer: {
+  rootContainer: {
     position: "relative",
   },
   inputField: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   inputLabel: {
     position: "absolute",
     top: "calc(50% - 10px)",
-    left: 2.64,
+    left: 2.8,
     fontSize: 15,
     color: theme.palette.primary.main,
     backgroundColor: (props: any) =>
@@ -43,7 +43,7 @@ const TextField: React.FC<Props> = (props) => {
   const classes = useStyles(props);
 
   return (
-    <div css={css(classes.RootContainer)}>
+    <div css={css(classes.rootContainer)}>
       <label>
         <input
           css={css(classes.inputField)}
