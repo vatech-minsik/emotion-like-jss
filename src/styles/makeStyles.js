@@ -11,9 +11,9 @@ const makeStyles = (styles) => (props) => {
     for (const [key, value] of styleEntries) {
       if (typeof value === "object") {
         const styleValue = constructStyles(value);
-        constructedStyle = { ...styleObject, [key]: styleValue };
+        constructedStyle = { ...constructedStyle, [key]: styleValue };
       } else if (typeof value === "function") {
-        constructedStyle = { ...styleObject, [key]: value(props) };
+        constructedStyle = { ...constructedStyle, [key]: value(props) };
       }
     }
 

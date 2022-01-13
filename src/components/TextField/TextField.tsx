@@ -12,24 +12,6 @@ interface Props {
   variant?: string;
 }
 
-// const styles = {
-//   RootContainer: css({
-//     position: "relative",
-//   }),
-//   inputField: css({
-//     fontSize: 15,
-//     height: 30,
-//     borderRadius: 3,
-//     border: "1px solid black",
-//   }),
-//   inputLabel: css({
-//     position: "absolute",
-//     top: "calc(50% - 10px)",
-//     left: 2.6,
-//     fontSize: 15,
-//   }),
-// };
-
 const useStyles = makeStyles((theme: Theme) => ({
   RootContainer: {
     position: "relative",
@@ -38,9 +20,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 15,
     height: 30,
     borderRadius: 3,
-    border: "1px solid black",
+    border: (props: any) =>
+      props.variant === "contained" ? "1px solid black" : "3px solid blue",
     "&:hover": {
-      color: "red",
+      color: (props: any) => (props.variant === "contained" ? "red" : "blue"),
     },
   },
   inputLabel: {
@@ -58,8 +41,6 @@ const TextField: React.FC<Props> = (props) => {
   const { value, onChange, ...others } = props;
 
   const classes = useStyles(props);
-
-  console.log(classes);
 
   return (
     <div css={css(classes.RootContainer)}>
