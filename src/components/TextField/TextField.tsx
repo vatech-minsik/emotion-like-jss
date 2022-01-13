@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     top: "calc(50% - 10px)",
     left: 2.8,
     fontSize: 15,
-    color: theme.palette.primary.main,
+    // color: theme.palette.primary.main,
     backgroundColor: (props: any) =>
       props.variant === "contained" ? "none" : "transparent",
   },
